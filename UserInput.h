@@ -6,7 +6,7 @@
 #define USERINPUT_H
 
 
-
+//处理用户输入，并将输入信息传递给蛇or游戏
 class UserInput {
 
 };

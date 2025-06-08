@@ -9,4 +9,6 @@ add_executable(voracious_snake
         Food.cpp
         Renderer.cpp
         UserInput.cpp
+        MapCtrl.cpp
+        MapCtrl.h
 )
