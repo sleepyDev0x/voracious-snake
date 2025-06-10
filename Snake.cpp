@@ -3,3 +3,12 @@
 //
 
 #include "Snake.h"
+
+Snake::Snake(int height, int width) {
+    int x = height / 2;
+    int y = width / 2;//在中央生成
+    body.push_back({x,y - 2});
+    body.push_back({x,y - 1});
+    body.push_back({x,y});//蛇头
+    corrent_dir = {0,1};
+}

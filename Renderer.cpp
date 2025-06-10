@@ -21,13 +21,13 @@ void Renderer::render(const MapCtrl &map, const Snake snake, const Food &food) {
         board[j][map.width - 1] = '#';
     }
 
-    //绘制蛇的位置
+    //绘制蛇的位置"O & o"
     for (int i = 0; i < snake.body.size(); ++i) {
         int x = snake.body[i].first;
         int y = snake.body[i].second;
         board[x][y] = (i == snake.body.size() - 1) ? 'O' : 'o';//蛇头用O，其余用o
     }
-    //绘制食物的位置
+    //绘制食物的位置"*"
     board[food.food_pos.first][food.food_pos.second] = '*';
 
     system("cls");//清屏

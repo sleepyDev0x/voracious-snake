@@ -15,8 +15,8 @@ int main() {
     // Game game;
     // game.start();
     MapCtrl map(60,20);
-    Snake snake;
-    Food food;
+    Snake snake(map.height,map.width);
+    Food food(map.height,map.width);
     Renderer rend;
     rend.render(map,snake,food);
 
