@@ -12,3 +12,18 @@ Snake::Snake(int height, int width) {
     body.push_back({x,y});//蛇头
     corrent_dir = {0,1};
 }
+
+std::pair<int,int> Snake::get_head() const {
+    return body.front();
+}
+
+
+void Snake::move(bool could_eat) {
+    if (could_eat == 1) {
+        //根据蛇当前的移动方向判断食物的位置
+        
+    }
+    else {
+
+    }
+}

@@ -12,13 +12,10 @@ using namespace std;
 //随机生成事物位置，被蛇吃掉后重新生成
 class Food {
 public:
-    bool is_eatten();//判断蛇头是否在食物的位置
-    void genetate_food();//随机生成食物
+    Food(int width,int height) {generate_food(height,width);}//生成随机Food坐标
 
-
-    Food(int height,int width) {generate_food(height,width);}//生成随机Food坐标
-
-    void generate_food(int height,int width);//不加const，因为改变了成员变量food_pos的值
+    void generate_food(int width,int height);//不加const，因为改变了成员变量food_pos的值
+    void generate_new_food(int width,int height);//Food被吃后重新生成
 
 public:
     pair<int,int> food_pos;//食物位置坐标

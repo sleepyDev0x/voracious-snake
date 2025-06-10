@@ -34,6 +34,6 @@ void Renderer::render(const MapCtrl &map, const Snake snake, const Food &food) {
 
     //将数组打印出来即可
     for (auto i : board) {
-        std::cout << i << endl;
+        std::cout << i << std::endl;
     }
 }
