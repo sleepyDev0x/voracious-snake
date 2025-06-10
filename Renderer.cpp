@@ -22,8 +22,15 @@ void Renderer::render(const MapCtrl &map, const Snake snake, const Food &food) {
     }
 
     //绘制蛇的位置
-
+    for (int i = 0; i < snake.body.size(); ++i) {
+        int x = snake.body[i].first;
+        int y = snake.body[i].second;
+        board[x][y] = (i == snake.body.size() - 1) ? 'O' : 'o';//蛇头用O，其余用o
+    }
     //绘制食物的位置
+    board[food.food_pos.first][food.food_pos.second] = '*';
+
+    system("cls");//清屏
 
     //将数组打印出来即可
     for (auto i : board) {

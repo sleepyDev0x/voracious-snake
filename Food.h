@@ -15,7 +15,6 @@ public:
     bool is_eatten();//判断蛇头是否在食物的位置
     void genetate_food();//随机生成食物
 
-private:
     pair<int,int> food_pos;//食物位置坐标
 
 
