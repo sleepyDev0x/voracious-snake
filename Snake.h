@@ -6,6 +6,12 @@
 #define SNAKE_H
 #include <deque>
 
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+};
 
 class Snake {
 public:
@@ -15,14 +21,22 @@ public:
 
     std::pair<int,int> get_head() const;//返回蛇头部位置
     std::deque<std::pair<int,int>> get_body() const {return body;}
-    std::pair<int,int> get_corrent_dir() const {return corrent_dir;}
 
 private:
     std::deque<std::pair<int,int>> body;//每一节身体用(x,y)表示，body[0]是蛇尾，body.back()是蛇头
-    std::pair<int,int> corrent_dir;//当前方向:上(-1,0) 下(1,0) 左(0,-1) 右(0,1)
-
+    Direction dir;
 };
 
 
+//方向-偏移量转换函数
+inline std::pair<int,int> get_offect(Direction d) {
+    switch (d) {
+        case Direction::Up : return {-1,0};
+        case Direction::Down : return {1,0};
+        case Direction::Left : return {0,-1};
+        case Direction::Right : return {0,1};
+    }
+    return {0 ,0};
+}
 
 #endif //SNAKE_H

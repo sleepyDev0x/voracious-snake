@@ -10,7 +10,7 @@ Snake::Snake(int height, int width) {
     body.push_back({x,y - 2});
     body.push_back({x,y - 1});
     body.push_back({x,y});//蛇头
-    corrent_dir = {0,1};
+    dir = Right;
 }
 
 std::pair<int,int> Snake::get_head() const {
@@ -19,5 +19,9 @@ std::pair<int,int> Snake::get_head() const {
 
 
 void Snake::move() {
-
+    auto head = body.front();
+    auto offect = get_offect(dir);
+    std::pair<int,int> new_head = {head.first + offect.first,head.second + offect.second};
+    body.push_front(new_head);
+    body.pop_back();
 }
