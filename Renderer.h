@@ -12,6 +12,7 @@
 //将蛇、食物以及地图渲染到屏幕上
 class Renderer {
 public:
+    Renderer(){}
     void render(const MapCtrl& map,const Snake snake,const Food& food);
 
 };

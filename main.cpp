@@ -13,14 +13,8 @@
 using namespace std;
 
 int main() {
-    // Game game;
-    // game.start();
-    srand(time(nullptr));//初始化随机数种子
-    MapCtrl map(60,20);
-    Snake snake(map.height,map.width);
-    Food food(map.height,map.width);
-    Renderer rend;
-    rend.render(map,snake,food);
+    Game game;
+    game.init();
 
 
     return 0;

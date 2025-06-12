@@ -18,12 +18,6 @@ std::pair<int,int> Snake::get_head() const {
 }
 
 
-void Snake::move(bool could_eat) {
-    if (could_eat == 1) {
-        //根据蛇当前的移动方向判断食物的位置
-        
-    }
-    else {
+void Snake::move() {
 
-    }
 }

@@ -9,11 +9,15 @@
 //管理后台地图，区别于Rendderer,后者主要是渲染功能
 class MapCtrl {
 public:
-    int width,height;//地图长宽
-
     MapCtrl(int w,int h) : width(w),height(h){}
 
     bool is_inside(int w,int h) const;//判断是否在边界内
+
+    int get_width() const {return width;}
+    int get_height() const {return height;}
+
+private:
+    int width,height;//地图长宽
 };
 
 
