@@ -17,7 +17,7 @@ class Snake {
 public:
     Snake(int height,int width);//游戏开始时蛇的初始化
 
-    void move();//根据当前方向更新位置信息
+    void move();//根据当前方向更新位置信息，move之后蛇长度+1，后续再判断是否真的+1了
 
     std::pair<int,int> get_head() const;//返回蛇头部位置
     std::deque<std::pair<int,int>> get_body() const {return body;}
