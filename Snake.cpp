@@ -22,6 +22,13 @@ void Snake::move() {
     auto head = body.front();
     auto offect = get_offect(dir);
     std::pair<int,int> new_head = {head.first + offect.first,head.second + offect.second};
-    body.push_front(new_head);
-    body.pop_back();
+    body.push_front(new_head);//新增头部
+}
+
+bool Snake::occupies(int x, int y) const {
+    for (const auto& node : body) {
+        if (node.first == x && node.second == y)
+            return true;
+    }
+    return false;
 }

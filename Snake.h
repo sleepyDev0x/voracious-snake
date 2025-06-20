@@ -19,6 +19,8 @@ public:
 
     void move();//根据当前方向更新位置信息，move之后蛇长度+1，后续再判断是否真的+1了
 
+    bool occupies(int x,int y) const;
+
     std::pair<int,int> get_head() const;//返回蛇头部位置
     std::deque<std::pair<int,int>> get_body() const {return body;}
 
