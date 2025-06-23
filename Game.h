@@ -20,11 +20,9 @@ public:
 
     void collide();//碰撞检测
 
-    // bool get_over() const {return over;}
-    // Snake get_snake() const {return snake;}
-    // Food get_food() const {return food;}
-    // MapCtrl get_map() const {return map;}
-    // Renderer get_render() const {return render  ;}
+    bool is_over()const {return over;}//游戏是否结束
+
+    void start();//游戏主循环
 
 private:
     bool over;

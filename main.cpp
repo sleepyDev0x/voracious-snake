@@ -13,8 +13,9 @@
 using namespace std;
 
 int main() {
+    srand(static_cast<unsigned>(time(nullptr)));
     Game game;
-    game.init();
+    game.start();
 
 
     return 0;
