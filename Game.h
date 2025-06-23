@@ -8,6 +8,8 @@
 #include "Snake.h"
 #include "Food.h"
 #include "Renderer.h"
+#include <thread>
+#include <conio.h>
 
 //管理游戏流程：初始化、循环、判胜负
 class Game {
@@ -23,6 +25,7 @@ public:
     bool is_over()const {return over;}//游戏是否结束
 
     void start();//游戏主循环
+
 
 private:
     bool over;

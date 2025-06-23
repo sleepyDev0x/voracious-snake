@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include <thread>
+#include "UserInput.h"
 
 void Game::init() {
     srand(time(nullptr));//初始化随机数种子
@@ -31,11 +32,13 @@ void Game::start() {
 
 
 void Game::update() {
+    // 处理用户输入
+    UserInput::process_input(snake);
     //蛇先移动
     snake.move();
     //判断是否吃到食物
     if (snake.get_head() != food.get_food_pos()) {
-        snake.remove_tail(); // 未吃到食物，删除尾部
+        snake.remove_tail(); // 没吃到食物，移除蛇尾
     } else {
         // 吃到食物，生成新的食物
         food.create_new_food(snake, map);
@@ -57,12 +60,11 @@ void Game::collide() {
         }
     }
     //碰撞边界
-    if (head.first < 0 || head.second < 0 || head.first >= map.get_width() || head.second >= map.get_height()) {
+    if (head.first < 0 || head.second < 0 || head.first >= map.get_height() || head.second >= map.get_width()) {
         over = true;
         return;
     }
 }
-
 
 
 

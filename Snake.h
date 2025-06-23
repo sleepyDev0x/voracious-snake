@@ -13,6 +13,7 @@ enum Direction {
     Right
 };
 
+//deque：头(front)为蛇头，尾(back)为蛇尾
 class Snake {
 public:
     Snake(int height,int width);//游戏开始时蛇的初始化
@@ -22,12 +23,15 @@ public:
 
     bool occupies(int x,int y) const;
 
-    std::pair<int,int> get_head() const;//返回蛇头部位置
-    std::deque<std::pair<int,int>>& get_body() {return body;}//返回引用以便修改
-    const std::deque<std::pair<int,int>>& get_body() const {return body;}//const版本
+    std::pair<int,int> get_head() const;
+    std::deque<std::pair<int,int>>& get_body() {return body;}
+    const std::deque<std::pair<int,int>>& get_body() const {return body;}
+    Direction get_dir() const {return dir;}
+
+    void set_direction(Direction d);
 
 private:
-    std::deque<std::pair<int,int>> body;//每一节身体用(x,y)表示，body[0]是蛇尾，body.back()是蛇头
+    std::deque<std::pair<int,int>> body;//每一节身体用(x,y)表示
     Direction dir;
 };
 

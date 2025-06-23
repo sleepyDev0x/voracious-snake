@@ -25,7 +25,7 @@ void Renderer::render(const MapCtrl &map, const Snake snake, const Food &food) {
     for (int i = 0; i < snake.get_body().size(); ++i) {
         int x = snake.get_body()[i].first;
         int y = snake.get_body()[i].second;
-        board[x][y] = (i == snake.get_body().size() - 1) ? 'O' : 'o';//蛇头用O，其余用o
+        board[x][y] = (i == 0) ? 'O' : 'o'; // i==0 是蛇头
     }
     //绘制食物的位置"*"
     board[food.get_food_pos().first][food.get_food_pos().second] = '*';
