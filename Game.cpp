@@ -13,7 +13,6 @@ void Game::init() {
     food = Food(map.get_height(),map.get_width());
     render.render(map, snake, food);
 }
-
 void Game::start() {
     init();
 
